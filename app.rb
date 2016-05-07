@@ -1,6 +1,7 @@
+﻿#encoding : utf-8
 require 'rubygems'
 require 'sinatra'
-#require 'sinatra/reloader'
+require 'sinatra/reloader'
 
 get '/' do
 	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
@@ -22,8 +23,8 @@ post '/visit' do
 	@barber = params[:barber]
 	@color = params[:color]
 
-	# хеш
-	hh = { 	:username => 'Введите имя',
+	# Hash
+	hh = { 	:username => 'Введите ваше имя',
 			:phone => 'Введите телефон',
 			:datetime => 'Введите дату и время' }
 

@@ -2,18 +2,7 @@
 <p>На этой странице вы сможете записаться к нам в Barber Shop</p>
 
 
-<script type="text/javascript">
 
-$(function() {
-
-  // тут я могу написать любой javascript код, который исполнится
-  // после загрузки страницы
-
-  $('#color').simplecolorpicker();
-
-});
-
-</script>
 
 
 <form action="/visit" method="POST" role="form">
@@ -37,9 +26,9 @@ $(function() {
   <div class="form-group">
     <label>Ваш парикмахер:</label>
     <select name="barber" class="form-control">
-      <option>Jessie Pinkman</option>
-      <option>Walter White</option>
-      <option>Gus Fring</option>
+      <option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %> >Jessie Pinkman</option>
+      <option <%= @barber == 'Walter White' ? 'selected' : '' %> >Walter White</option>
+      <option <%= @barber == 'Gus Fring' ? 'selected' : '' %> >Gus Fring</option>
     </select>
   </div>
 
@@ -64,3 +53,15 @@ $(function() {
   <button type="submit" class="btn btn-primary">Записаться</button>
 
 </form>
+<script type="text/javascript">
+
+$(function() {
+
+  // тут я могу написать любой javascript код, который исполнится
+  // после загрузки страницы
+
+  $('#color').simplecolorpicker();
+
+});
+
+</script>
