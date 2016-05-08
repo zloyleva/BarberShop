@@ -19,7 +19,7 @@
 
   <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input name="datetime" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @datetime %>">
+    <input name="datetime" id="datetimepicker" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @datetime %>">
   </div>
 
 
@@ -54,14 +54,10 @@
 
 </form>
 <script type="text/javascript">
-
 $(function() {
-
   // тут я могу написать любой javascript код, который исполнится
   // после загрузки страницы
-
   $('#color').simplecolorpicker();
-
+  $('#datetimepicker').datetimepicker();
 });
-
 </script>
