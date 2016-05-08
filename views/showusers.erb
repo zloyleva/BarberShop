@@ -10,6 +10,17 @@
 		</tr>
 	</thead>
 	<tbody>
-		<%= @users_table %>
+		<% @results.each do |row| %>
+
+		<tr>
+			<td><%= row['id'] %></td>
+			<td><%= row['username'] %></td>
+			<td><%= row['phone'] %></td>
+			<td><%= row['datestamp'] %></td>
+			<td><%= row['barber'] %></td>
+			<td><%= row['color'] %></td>
+		</tr>
+			
+		<% end %>
 	</tbody>
 </table>

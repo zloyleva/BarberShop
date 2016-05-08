@@ -63,11 +63,8 @@ post '/visit' do
 end
 
 get '/showusers' do
-	@users_table = ""
 	db = get_db
-	db.execute 'select * from Users' do |row|
-		@users_table += "<tr><td>#{row['id']}</td><td>#{row['username']}</td><td>#{row['phone']}</td><td>#{row['datestamp']}</td><td>#{row['barber']}</td><td>#{row['color']}</td></tr>\n"
-		#@users_table = @users_table + "<tr><td>" + row.to_s + "</tr></td>\n"
-	end
+	@results = db.execute 'select * from Users order by id desc'
+	
 	erb :showusers
 end
