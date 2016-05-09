@@ -26,9 +26,13 @@
   <div class="form-group">
     <label>Ваш парикмахер:</label>
     <select name="barber" class="form-control">
-      <option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %> >Jessie Pinkman</option>
-      <option <%= @barber == 'Walter White' ? 'selected' : '' %> >Walter White</option>
-      <option <%= @barber == 'Gus Fring' ? 'selected' : '' %> >Gus Fring</option>
+      
+        <% @show_barbers.each do |row| %>
+
+          <option <%= @barber == row['barbername'] ? 'selected' : '' %> ><%= row['barbername'] %></option>
+
+        <% end %>
+
     </select>
   </div>
 

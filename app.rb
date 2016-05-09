@@ -22,6 +22,11 @@ def seed_db db, barbers
 	end
 end
 
+before do
+	db = get_db
+	@show_barbers =  db.execute 'select * from Barbers'
+end
+
 configure do
 	db = get_db
 	db.execute 'CREATE TABLE IF NOT EXISTS 
@@ -41,7 +46,8 @@ configure do
 					"id" INTEGER PRIMARY KEY AUTOINCREMENT, 
 					"barbername" TEXT
 				)'	
-	seed_db db,['Jessie Pinkman', 'Walter White', 'Gus Fring', 'Mike Ehrmantraut']
+	seed_db db,['Jessie Pinkman', 'Walter White', 'Gus Fring', 'Mike Ehrmantraut', 'Ann White']
+
 end
 
 get '/' do
@@ -53,6 +59,9 @@ get '/about' do
 end
 
 get '/visit' do
+	db = get_db
+	list_babrbers db
+	
 	erb :visit
 end
 
